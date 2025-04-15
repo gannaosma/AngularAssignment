@@ -1,0 +1,104 @@
+<div class="container pt-2">
+  <div class="d-flex align-items-center justify-content-between py-3 px-4 mb-4 bg-light rounded shadow-sm">
+    <!-- Store Logo & Name -->
+    <div class="d-flex align-items-center gap-3">
+      <img [src]="store.logo" class="img-fluid" style="max-height: 60px;">
+      <h1 class="h4 m-0">{{ store.name }}</h1>
+    </div>
+  
+    <!-- User Profile -->
+    <div class="text-center">
+      <img src="assets/logo.png" class="img-fluid avatar-lg rounded-circle border" width="60" height="60" alt="User">
+      <h4 class="text-primary fw-bold mt-2 mb-1">{{clientName}}</h4>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-between align-items-center">
+    <h3 *ngIf="discount !== DiscountOffers.NoDiscount" class="text-primary">We offer an explicit discount of: {{discount}}</h3>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Client Name" [(ngModel)]="clientName">
+      <label for="floatingInput">Client Name</label>
+    </div>
+  </div>    
+    
+  <app-product-list></app-product-list>
+  
+    
+  <!-- <div class="table-responsive">
+      Table with *ngIf and else for ng-template 
+      <table class="table table-hover align-middle text-center" *ngIf="IsPurshased; else buyTemplate">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">Buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of filteredProducts">
+            <tr *ngIf="item.Quantity != 0" [ngClass]="{'bg-warning': item.Quantity == 1}">
+              <td class="fw-semibold">{{ item.Name }}</td>
+              <td>
+                <input type="number" [(ngModel)]="item.Quantity" class="form-control" style="width: 80px;" readonly>
+              </td>
+              <td class="text-success fw-bold">${{ item.Price }}</td>
+              <td>
+                <img [src]="item.Img" alt="{{ item.Name }}" class="img-thumbnail" style="width: 60px; height: 60px;">
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm px-3" (click)="PurshaseOrNot()"> 
+                <button type="button" class="btn btn-primary btn-sm px-3" (click)="PurshaseOrNot(item)">
+                  <i class="bi bi-cart-plus"></i> Buy
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    ng-template for the "Thanks" message
+    <ng-template #buyTemplate>
+      <div class="mt-3 text-center">
+        <h2 class="text-info">Thanks for purchasing from our Store, {{clientName}}</h2>
+      </div>
+    </ng-template> -->
+    
+
+    <!-- <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let product of filteredProducts">
+          <div class="card text-center p-2 shadow-sm" >
+            <img [src]="product.Img" class="card-img-top" alt="{{product.Name}}" HoverShodow>
+            <div class="card-body">
+              <h6 class="text-danger">{{ product.Name }}</h6>
+              <h5 class="text-danger">{{ product.Price | currency : 'USD' :'code'}}</h5>
+              <h5 class="text-primary">{{ OrderDate | date :'shortDate'}}</h5>
+              <button class="btn btn-dark w-100" *ngIf="product.Quantity != 0">أضف إلى السلة</button>
+              <button class="btn btn-secondary w-100" *ngIf="product.Quantity == 0" disabled>غير متوفر</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="p-2">
+      <h3 class="text-danger"> {{30205101100142 | egyptianIDDate: 'FullDate' }} </h3>
+    </div> -->
+
+    <!-- <div>
+      <h3>{{'1234567891234567' | creditformat}}</h3>
+    </div> -->
+    
+    <!-- <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="CreditCard" placeholder="CreditCard number" CreditFormat>
+      <label for="CreditCard">CreditCard Number</label>
+    </div> -->
+  
+
+    
+    
+</div>

@@ -1,0 +1,44 @@
+<div class="mb-3 col-md-3">
+    <label for="prdCat" class="form-label">Category:</label>
+    <select class="form-select" name="prdCat" id="prdCat" [(ngModel)]="selectedCat">
+        <option  value=""></option>
+        <option *ngFor="let item of category" [value]="item.ID">{{item.Name}}</option>
+    </select>
+</div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle text-center" >
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of filteredProducts; let i = index">
+                <td>{{i+1}}</td>
+                <td class="fw-semibold">{{ item.Name }}</td>
+                <td>
+                <input type="number" [(ngModel)]="item.Quantity" class="form-control" style="width: 80px;" readonly>
+                </td>
+                <td class="text-success fw-bold">${{ item.Price }}</td>
+                <td>
+                <img [src]="item.Img" alt="{{ item.Name }}" class="img-thumbnail" style="width: 60px; height: 60px;">
+                </td>
+                <td>
+                <!-- <button type="button" class="btn btn-primary btn-sm px-3" (click)="PurshaseOrNot()">  -->
+                <button type="button" class="btn btn-primary btn-sm px-3" (click)="PurshaseOrNot(item)">
+                    <i class="bi bi-cart-plus"></i> Add 
+                </button>
+                </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+   
