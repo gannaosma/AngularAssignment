@@ -20,9 +20,51 @@
       <label for="floatingInput">Client Name</label>
     </div>
   </div>    
+
+  <div class="mb-3 col-md-3">
+    <label for="prdCat" class="form-label">Category:</label>
+    <select #selectedItem class="form-select" name="prdCat" id="prdCat" [(ngModel)]="selectedCategory">
+        <option  value=""></option>
+        <option *ngFor="let item of category" [value]="item.ID">{{item.Name}}</option>
+    </select>
+</div>
     
-  <app-product-list></app-product-list>
+  <app-product-list [selectedCategory]="selectedCategory" (addToCart)="handleAddToCart($event)"></app-product-list>
   
+</div>
+
+<div class="table-responsive" *ngIf="shoppingCart.length > 0">
+  <h2 class="text-primary p-2"> Cart Details</h2>
+  <h4>Total Price: {{totalPrice}}</h4>
+  <table class="table table-hover align-middle text-center">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">No.</th>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th>Selected Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of shoppingCart; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.ProductName }}</td>
+        <td>${{ item.UnitPrice }}</td>
+        <td>{{ item.SelectedQunatity }}</td>
+        <td>${{ item.UnitPrice * item.SelectedQunatity }}</td>
+        <td>
+          <!-- <button type="button" class="btn btn-primary btn-sm px-3" (click)="PurshaseOrNot()">  -->
+          <button type="button" class="btn btn-primary btn-sm px-3" (click)="RemoveFromCart(item.ProductID)">
+              <i class="bi bi-cart-min"></i> Remove 
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
     
   <!-- <div class="table-responsive">
       Table with *ngIf and else for ng-template 
@@ -98,7 +140,3 @@
       <label for="CreditCard">CreditCard Number</label>
     </div> -->
   
-
-    
-    
-</div>
