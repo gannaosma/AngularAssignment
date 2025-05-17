@@ -1,0 +1,15 @@
+<div class="card m-3" style="width: 35%">
+    <img [src]="product?.Img" class="card-img-top" [alt]="product?.Name">
+    <div class="card-body">
+        <h5 class="card-title">{{product?.Name}}</h5>
+        <div class="card-text">
+            <div>Price: {{product?.Price | currency}}</div>
+            <div>Quantity: {{product?.Quantity}}</div>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-danger" [disabled]="currentIndex <= 0" (click)="previous()">Previous</button>
+            <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+            <button type="button" class="btn btn-primary" [disabled]="currentIndex >= productIDSList.length-1" (click)="next()">Next</button>
+          </div>
+    </div>
+</div>

@@ -13,6 +13,11 @@ import { EgyptianIDDatePipe } from './Pipe/egyptian-iddate.pipe';
 import { CreditformatPipe } from './Pipe/creditformat.pipe';
 import { CreditFormatDirective } from './Directives/credit-format.directive';
 import { ProductListComponent } from './Components/product-list/product-list.component';
+import { HomeComponent } from './Components/home/home.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 
 
 @NgModule({
@@ -26,7 +31,12 @@ import { ProductListComponent } from './Components/product-list/product-list.com
     EgyptianIDDatePipe,
     CreditformatPipe,
     CreditFormatDirective,
-    ProductListComponent
+    ProductListComponent,
+    HomeComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    NotFoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

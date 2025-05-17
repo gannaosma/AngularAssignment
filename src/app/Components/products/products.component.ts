@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DiscountOffers } from 'src/app/ViewModels/DiscountOffers';
 import { ICategory } from 'src/app/ViewModels/icategory';
-import { IProduct } from 'src/app/ViewModels/iproduct';
 import { IShoppingCartItems } from 'src/app/ViewModels/ishopping-cart-items';
 import { Store } from 'src/app/ViewModels/store';
 
