@@ -6,14 +6,17 @@ import { ProductsComponent } from './Components/products/products.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { UserLoginComponent } from './Components/user-login/user-login.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/Home', pathMatch: 'full'},
   {path: 'Home', component: HomeComponent},
-  {path: 'About', component: AboutUsComponent},
-  {path: 'Contact', component: ContactUsComponent},
-  {path: 'Products', component: ProductsComponent},
-  {path: 'Product/:id', component: ProductDetailsComponent},
+  {path: 'About', component: AboutUsComponent, canActivate: [AuthGuard]},
+  {path: 'Contact', component: ContactUsComponent, canActivate: [AuthGuard]},
+  {path: 'Products', component: ProductsComponent, canActivate: [AuthGuard]},
+  {path: 'Product/:id', component: ProductDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'Login', component: UserLoginComponent},
   {path: '**', component: NotFoundComponent},
 
 ];

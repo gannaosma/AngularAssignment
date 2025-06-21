@@ -18,6 +18,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { UserLoginComponent } from './Components/user-login/user-login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ProductDetailsComponent } from './Components/product-details/product-de
     AboutUsComponent,
     ContactUsComponent,
     NotFoundComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

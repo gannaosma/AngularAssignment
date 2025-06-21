@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/ViewModels/iproduct';
-import { ProductsServiceService } from 'src/app/ٍServices/products-service.service';
+import { ProductsServiceService } from 'src/app/Services/products-service.service';
 
 @Component({
   selector: 'app-product-details',
